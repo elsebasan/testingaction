@@ -1,20 +1,10 @@
-name: Release Workflow
-
+name: Actions Runner Controller Demo
 on:
-  push:
-    branches:
-      - 'main'
+  workflow_dispatch:
 
 jobs:
-  release-job:
-    runs-on: ubuntu-latest
-
+  Explore-GitHub-Actions:
+    # You need to use the INSTALLATION_NAME from the previous step
+    runs-on: arc-runner-set
     steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-
-      - name: Release with release-please
-        uses: google-github-actions/release-please-action@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          release-type: simple
+    - run: echo "🎉 This job uses runner scale set runners!"
